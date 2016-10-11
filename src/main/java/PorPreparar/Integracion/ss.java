@@ -36,9 +36,9 @@ public class ss {
     }
 
     public void prueba3() {
-	Traductor s = new Traductor();
+	/*Traductor s = new Traductor();
 	s.autenticarServicio();
-	System.out.println(s.traducirTexto("mariposa"));
+	System.out.println(s.traducirTexto("mariposa"));*/
     }
 
     public static void main(String[] args) throws ClassNotFoundException {
