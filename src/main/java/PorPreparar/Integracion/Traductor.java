@@ -1,5 +1,9 @@
 package PorPreparar.Integracion;
 
+import com.ibm.watson.developer_cloud.language_translator.v2.LanguageTranslator;
+import com.ibm.watson.developer_cloud.language_translator.v2.model.Language;
+import com.ibm.watson.developer_cloud.language_translator.v2.model.TranslationResult;
+
 import Integracion.ConexionWatson;
 
 /**
@@ -11,23 +15,23 @@ import Integracion.ConexionWatson;
  */
 public class Traductor implements ConexionWatson {
 
-    private String USUARIO = "a37aae1c-fcb1-4d3e-8af3-c31e40ebe93c";
-    private String CONTRASENA="EoGT0QJcVqAv";
+    private String USUARIO = "44ffdf8f-076e-4fa2-8b12-36a614e62afe";
+    private String CONTRASENA = "dyX62nw3F3WM";
 
-    //private static LanguageTranslator servicio;
+    private static LanguageTranslator servicio;
 
     /**
      * Metodo constructor de la clase Traductor
      */
     public Traductor() {
-	//servicio = new LanguageTranslator(USUARIO, CONTRASEÑA);
+	servicio = new LanguageTranslator();
     }
 
     /**
      * Metodo que permite autenticar el servicio Languaje Translation
      */
     public void autenticarServicio() {
-	//servicio.setUsernameAndPassword(CONTRASEÑA, USUARIO);
+	servicio.setUsernameAndPassword(USUARIO, CONTRASENA);
     }
 
     /**
@@ -35,9 +39,8 @@ public class Traductor implements ConexionWatson {
      * un string con la traduccion de español a ingles
      */
     public String traducirTexto(String pTexto) {
-	//TranslationResult translationResult = servicio.translate(pTexto, Language.SPANISH, Language.ENGLISH).execute();
-	//String traduccion = translationResult.getTranslations().get(0).getTranslation();
-	//return traduccion;
-	return null;
+	TranslationResult translationResult = servicio.translate(pTexto, Language.SPANISH, Language.ENGLISH).execute();
+	String traduccion = translationResult.getTranslations().get(0).getTranslation();
+	return traduccion;
     }
 }
