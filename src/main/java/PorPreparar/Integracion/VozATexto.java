@@ -15,8 +15,8 @@ import Integracion.ConexionWatson;
 
 public class VozATexto implements ConexionWatson {
 
-    private static String USUARIO;
-    private static String CONTRASENA;
+    private static String USUARIO = "b006954a-fc48-445d-a4bb-1aa7a2840a9b";
+    private static String CONTRASENA = "PskeMLKQuqfL";
     private static CountDownLatch lock;
     private SpeechToText servicio;
     private String pregunta;
@@ -36,8 +36,9 @@ public class VozATexto implements ConexionWatson {
     }
 
     public String procesarAudio() throws InterruptedException {
-	RecognizeOptions options = new RecognizeOptions.Builder().continuous(true).interimResults(true)
-		.contentType(HttpMediaType.AUDIO_WAV).build();
+	lock = new CountDownLatch(1);
+	RecognizeOptions options = new RecognizeOptions.Builder().model("es-ES_BoardbandModel").continuous(true)
+		.interimResults(true).contentType(HttpMediaType.AUDIO_WAV).build();
 
 	servicio.recognizeUsingWebSocket(audio, options, new BaseRecognizeCallback() {
 	    @Override

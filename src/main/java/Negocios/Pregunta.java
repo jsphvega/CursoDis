@@ -1,5 +1,7 @@
 package Negocios;
 
+import java.io.FileNotFoundException;
+
 import PorPreparar.Negocios.EntradaVoz;
 
 /**
@@ -24,10 +26,12 @@ public class Pregunta {
 
     /**
      * Metodo que registra la pregunta por medio de voz
+     * @throws InterruptedException 
+     * @throws FileNotFoundException 
      */
-    public void setPregunta() {
+    public void setPregunta() throws FileNotFoundException, InterruptedException {
 	EntradaVoz sVoz = new EntradaVoz();
-	//pregunta = sVoz.convertirAudio();
+	pregunta = sVoz.procesarPregunta();
     }
 
     /**

@@ -1,6 +1,7 @@
 package PorPreparar.Negocios;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.sound.sampled.AudioFileFormat;
@@ -12,6 +13,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
 
 import Negocios.Pregunta;
+import PorPreparar.Integracion.VozATexto;
 
 /**
  * Clase que se encarga de ejecutar el microfono para introducir la pregunta via
@@ -32,15 +34,15 @@ public class EntradaVoz extends Pregunta {
      */
     private AudioFormat getFormatoAudio() {
 	// Atributos de configuracion
-	float sampleRate = 16000;
-	int sampleSizeInBits = 8;
-	int channels = 2;
-	boolean signed = true;
-	boolean bigEndian = true;
+	float sFrecuencia = 16000;
+	int sTamanoBits = 8;
+	int sCanal = 2;
+	boolean sActivo = true;
+	boolean sEndian = true;
 
 	// Se crea y se retorna la configuracion
-	AudioFormat format = new AudioFormat(sampleRate, sampleSizeInBits, channels, signed, bigEndian);
-	return format;
+	AudioFormat sFormato = new AudioFormat(sFrecuencia, sTamanoBits, sCanal, sActivo, sEndian);
+	return sFormato;
     }
 
     /**
@@ -48,73 +50,73 @@ public class EntradaVoz extends Pregunta {
      */
     private void iniciarGrabacion() {
 	try {
-	    AudioFormat format = getFormatoAudio();
-	    DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+	    AudioFormat sFormato = getFormatoAudio();
+	    DataLine.Info sInformacion = new DataLine.Info(TargetDataLine.class, sFormato);
 
-	    // revisa si el sistema soporta la linea de datos
-	    if (!AudioSystem.isLineSupported(info)) {
+	    // Revisa si el sistema soporta la linea de datos
+	    if (!AudioSystem.isLineSupported(sInformacion)) {
 		System.exit(0);
 	    }
-	    
-	    //Inicia la grabacion
-	    lineaGrabacion = (TargetDataLine) AudioSystem.getLine(info);
-	    lineaGrabacion.open(format);
+
+	    // Inicia la grabacion
+	    lineaGrabacion = (TargetDataLine) AudioSystem.getLine(sInformacion);
+	    lineaGrabacion.open(sFormato);
 	    lineaGrabacion.start();
 
-	    System.out.println("Start capturing...");
+	    AudioInputStream sEntradaAudio = new AudioInputStream(lineaGrabacion);
+	    AudioSystem.write(sEntradaAudio, tipoArchivo, archivo);
 
-	    AudioInputStream ais = new AudioInputStream(lineaGrabacion);
-
-	    System.out.println("Start recording...");
-
-	    // start recording
-	    AudioSystem.write(ais, tipoArchivo, archivo);
-
-	} catch (LineUnavailableException ex) {
-	    ex.printStackTrace();
-	} catch (IOException ioe) {
-	    ioe.printStackTrace();
+	} catch (LineUnavailableException | IOException e) {
+	    e.printStackTrace();
 	}
     }
 
     /**
-     * Closes the target data line to finish capturing and recording
+     * Metodo que cierra la linea de grabacion
      */
-    void finish() {
+    private void finalizarGrabacion() {
 	lineaGrabacion.stop();
 	lineaGrabacion.close();
-	System.out.println("Finished");
     }
 
     /**
-     * Entry to run the program
+     * Metodo que se encarga de ejecutar la linea de grabacion del proyecto
      */
-    public void ejecutar() {
+    private void grabarPregunta() {
 	tipoArchivo = AudioFileFormat.Type.WAVE;
-	archivo = new File("C:/Users/jsphvega/Downloads/RecordAudio.wav");
+	archivo = new File("src/files/RecordAudio.wav");
 
-	// creates a new thread that waits for a specified
-	// of time before stopping
-	Thread stopper = new Thread(new Runnable() {
+	// Crea lel nuevo hilio que mantiene el tiempo dicho para detenerse
+	Thread sDetector = new Thread(new Runnable() {
 	    public void run() {
 		try {
 		    Thread.sleep(TIEMPO);
 		} catch (InterruptedException ex) {
 		    ex.printStackTrace();
 		}
-		finish();
+		finalizarGrabacion();
 	    }
 	});
 
-	stopper.start();
-
-	// start recording
+	// Se inicia el hilo y la grabacion
+	sDetector.start();
 	iniciarGrabacion();
     }
 
-    public static void main(String[] args) {
-	EntradaVoz hjh = new EntradaVoz();
-	hjh.ejecutar();
+    /**
+     * Metodo que se encarga de convertir el audio en una cadena de texto
+     * 
+     * @return Una cadena de texto
+     * @throws FileNotFoundException 
+     * @throws InterruptedException 
+     */
+    public String procesarPregunta() throws FileNotFoundException, InterruptedException {
+	grabarPregunta();
+	
+	VozATexto prueba = new VozATexto();
+	prueba.autenticarServicio();
+	prueba.buscarAudio();
+	
+	return prueba.procesarAudio();
     }
-
 }

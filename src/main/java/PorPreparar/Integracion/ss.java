@@ -21,7 +21,7 @@ public class ss {
 	    System.out.println(uu.get(i).getId());
     }
 
-    public void prueba2() throws ClassNotFoundException {
+    public void prueba2() throws ClassNotFoundException, FileNotFoundException, InterruptedException {
 	ArrayList<Consulta> listaConsultas = new ArrayList<>();
 	Consulta consulta1 = new Consulta("Cuanto costo la almohada");
 	consulta1.agregarRespuesta("Costo 5000 colones");
@@ -50,12 +50,13 @@ public class ss {
 	System.out.println(prueba.procesarAudio());
     }
     
-    public void prueba5(){
+    public void prueba5() throws FileNotFoundException, InterruptedException{
 	EntradaVoz ss = new EntradaVoz();
+	ss.procesarPregunta();
     }
     
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, InterruptedException {
 	ss dd = new ss();
-	dd.prueba5();
+	dd.prueba4();
     }
 }

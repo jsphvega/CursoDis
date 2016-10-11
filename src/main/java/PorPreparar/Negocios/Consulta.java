@@ -1,5 +1,6 @@
 package PorPreparar.Negocios;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 import Negocios.Pregunta;
@@ -11,7 +12,7 @@ public class Consulta {
     private Pregunta pregunta;
     private ArrayList<String> respuestasIncorrectas;
 
-    public Consulta(String pPregunta) {
+    public Consulta(String pPregunta) throws FileNotFoundException, InterruptedException {
 	pregunta = new Pregunta();
 	setPregunta(pPregunta);
     }
@@ -28,7 +29,7 @@ public class Consulta {
 	return respuestasIncorrectas;
     }
 
-    private void setPregunta(String pPregunta) {
+    private void setPregunta(String pPregunta) throws FileNotFoundException, InterruptedException {
 	if (pPregunta == null)
 	    pregunta.setPregunta();
 	else
