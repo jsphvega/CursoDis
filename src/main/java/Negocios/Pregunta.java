@@ -27,7 +27,7 @@ public class Pregunta {
      */
     public void setPregunta() {
 	EntradaVoz sVoz = new EntradaVoz();
-	pregunta = sVoz.convertirAudio();
+	//pregunta = sVoz.convertirAudio();
     }
 
     /**

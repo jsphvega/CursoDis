@@ -1,11 +1,13 @@
 package PorPreparar.Integracion;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import Integracion.Conversacion;
 import Negocios.FabricaDocumento;
 import Negocios.Informacion;
 import PorPreparar.Negocios.Consulta;
+import PorPreparar.Negocios.EntradaVoz;
 
 public class ss {
 
@@ -41,8 +43,19 @@ public class ss {
 	System.out.println(s.traducirTexto("mariposa"));*/
     }
 
+    public void prueba4() throws FileNotFoundException, InterruptedException{
+	VozATexto prueba = new VozATexto();
+	prueba.autenticarServicio();
+	prueba.buscarAudio();
+	System.out.println(prueba.procesarAudio());
+    }
+    
+    public void prueba5(){
+	EntradaVoz ss = new EntradaVoz();
+    }
+    
     public static void main(String[] args) throws ClassNotFoundException {
 	ss dd = new ss();
-	dd.prueba1();
+	dd.prueba5();
     }
 }
