@@ -3,11 +3,11 @@
  */
 
 body,html {
-	background-color: #3b4b54; width : 100%;
+	background-color: #E6E6FA; width : 100%;
 	height: 100%;
-	margin: 0 auto;
-	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	color: #ffffff;
+	margin: 30 auto;
+	font-family: arial ,"Lucida Grande", sans-serif;
+	color: #000000;
 }
 
 a {
@@ -19,13 +19,6 @@ a:hover {
 	text-decoration: underline;
 }
 
-.newappIcon {
-	padding-top: 10%;
-	display: block;
-	margin: 0 auto;
-	padding-bottom: 2em;
-	max-width:200px;
-}
 
 h1 {
 	font-weight: bold;
@@ -58,6 +51,119 @@ h1 {
 	color: #00aed1;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: aliceBlue;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button1:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button2 {
+    background-color: aliceBlue;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button3 {
+   background-color: aliceBlue;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button3:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button4 {
+   background-color: aliceBlue;
+    color: black;
+    border: 2px solid #008CBA;
+}
+
+.button4:hover {
+	  background-color: #008CBA;
+    color: white;
+}
+
+#text
+{
+    overflow-y:scroll;
+}
+
+input, textarea {
+  background-color : #d1d1d1;
+}
+
+
+select{
+			background:#F0FFFF url(arrow.png);
+			background-position: 500px center;
+			background-repeat: no-repeat;
+		   	padding: 10px;
+		   	font-size: 16px;
+		   	border: 0;
+		   	border-radius: 3px;
+		   -webkit-appearance: none;
+		   -moz-appearance: none;
+
+		   -webkit-transition: all 0.4s;
+		   -moz-transition: all 0.4s;
+		   transition: all 0.4s;
+
+		   -webkit-box-shadow: 0 4px 3px rgba(0,0,0,0.3);
+}
+	select:hover{
+		background-color: #008CBA;
+}
 
 table {
 	table-layout: fixed;
