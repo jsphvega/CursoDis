@@ -34,6 +34,11 @@
 				<artifactId>geronimo-servlet_3.0_spec</artifactId>
 				<version>1.0</version>
 			</dependency>
+			<dependency>
+				<groupId>TranslatorDS</groupId>
+				<artifactId>TranslatorDS</artifactId>
+				<version>1</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -46,7 +51,7 @@
 		<dependency>
 			<groupId>com.ibm.watson.developer_cloud</groupId>
 			<artifactId>java-sdk</artifactId>
-			<version>3.3.0</version>
+			<version>3.4.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.solr</groupId>

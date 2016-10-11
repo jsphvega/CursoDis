@@ -43,6 +43,6 @@ public class ss {
 
     public static void main(String[] args) throws ClassNotFoundException {
 	ss dd = new ss();
-	dd.prueba3();
+	dd.prueba1();
     }
 }
