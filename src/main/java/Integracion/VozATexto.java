@@ -1,7 +1,6 @@
-package PorPreparar.Integracion;
+package Integracion;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +12,12 @@ import com.ibm.watson.developer_cloud.speech_to_text.v1.websocket.BaseRecognizeC
 
 import Integracion.ConexionWatson;
 
+/**
+ * Esta clase permite gestionar la conversion de un archivo de audio a texto
+ * 
+ * @author ChuckyBueno
+ * @since 11-Octubre-2016
+ */
 public class VozATexto implements ConexionWatson {
 
     private static String USUARIO = "b006954a-fc48-445d-a4bb-1aa7a2840a9b";
@@ -22,18 +27,22 @@ public class VozATexto implements ConexionWatson {
     private String pregunta;
     private FileInputStream audio;
 
+    /**
+     * Metodo cosntructor de la clase
+     */
     public VozATexto() {
 	servicio = new SpeechToText();
     }
 
+    /**
+     * Metodo que permite autenticar el servicio Voz a Texto
+     */
     public void autenticarServicio() {
 	servicio.setUsernameAndPassword(USUARIO, CONTRASENA);
     }
 
     /**
-     * Busca el audio en una direccion
-     * 
-     * @throws FileNotFoundException
+     * Metodo que busca el audio en una direccion
      */
     private boolean buscarAudio() {
 	try {
@@ -48,7 +57,6 @@ public class VozATexto implements ConexionWatson {
      * Transcribe el audio a texto
      * 
      * @return la pregunta en texto plano
-     * @throws InterruptedException
      */
     public String procesarAudio() {
 	if (buscarAudio()) {

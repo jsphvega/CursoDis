@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import Integracion.Conversacion;
 import Integracion.Traductor;
+import Integracion.VozATexto;
 import Negocios.FabricaDocumento;
 import Negocios.Informacion;
 import PorPreparar.Negocios.Consulta;
@@ -27,7 +28,7 @@ public class ss {
 	}
     }
 
-    public void prueba2(){
+    public void prueba2() {
 	ArrayList<Consulta> listaConsultas = new ArrayList<>();
 	Consulta consulta1 = new Consulta("Cuanto costo la almohada");
 	consulta1.agregarRespuesta("Costo 5000 colones");
