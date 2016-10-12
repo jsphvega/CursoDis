@@ -1,5 +1,6 @@
 package PorPreparar.Negocios;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class CatalogoDeCategoria {
@@ -8,16 +9,17 @@ public class CatalogoDeCategoria {
     private ArrayList<Consulta> consultas;
 
     public CatalogoDeCategoria(String pNombre) {
-	// TODO implement here
+	this.nombre=pNombre;
+	consultas = new ArrayList<Consulta>();
     }
 
     public String getNombre() {
-	// TODO implement here
-	return "";
+	return nombre;
     }
 
-    public void crearConsulta(String pPregunta) {
-	// TODO implement here
+    public void crearConsulta(String pPregunta) throws FileNotFoundException, InterruptedException {
+	 Consulta consulta1= new Consulta(pPregunta);
+	 consultas.add(consulta1);
     }
 
 }
