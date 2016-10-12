@@ -15,11 +15,16 @@ public class ss {
     public void prueba1() {
 	Conversacion cc;
 	cc = Conversacion.getInstance();
-	cc.agregarInformacion("TRU", "TRU", "TRU");
+	if (cc.agregarInformacion("TRU", "TRU", "TRU"))
+	    System.out.println("Si ingresó");
 
 	ArrayList<Informacion> uu = cc.consultarInformacion("TRU");
-	for (int i = 0; i < uu.size(); i++)
-	    System.out.println(uu.get(i).getId());
+	if (uu.size() == 0)
+	    System.out.println("No hay");
+	else {
+	    for (int i = 0; i < uu.size(); i++)
+		System.out.println(uu.get(i).getId());
+	}
     }
 
     public void prueba2() throws ClassNotFoundException, FileNotFoundException, InterruptedException {
@@ -41,21 +46,21 @@ public class ss {
     public void prueba3() {
 	Traductor s = new Traductor();
 	s.autenticarServicio();
+	
 	System.out.println(s.traducirTexto("mariposa"));
     }
 
-    public void prueba4() throws FileNotFoundException, InterruptedException{
+    public void prueba4() throws FileNotFoundException, InterruptedException {
 	VozATexto prueba = new VozATexto();
 	prueba.autenticarServicio();
-	prueba.buscarAudio();
 	System.out.println(prueba.procesarAudio());
     }
-    
-    public void prueba5() throws FileNotFoundException, InterruptedException{
+
+    public void prueba5() throws FileNotFoundException, InterruptedException {
 	EntradaVoz ss = new EntradaVoz();
-	ss.procesarPregunta();
+	System.out.println(ss.procesarPregunta());
     }
-    
+
     public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, InterruptedException {
 	ss dd = new ss();
 	dd.prueba4();

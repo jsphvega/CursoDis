@@ -102,20 +102,22 @@ public class Conversacion implements ConexionWatson {
      *            La descripcion del titulo consultado
      * @param ptitulo
      *            Los sinonimos asociados a la descripcion
-     * @throws SolrServerException
-     * @throws IOException
      */
-    private void indexarInformacion(String pCategoria, String pDescripcion, String ptitulo)
-	    throws SolrServerException, IOException {
-	// Atributo que almacena la informacion de un documento
-	SolrInputDocument sDocumento = new SolrInputDocument();
-	sDocumento.addField("id", asignarID());
-	sDocumento.addField("title", ptitulo);
-	sDocumento.addField("category", pCategoria);
-	sDocumento.addField("description", pDescripcion);
+    private void indexarInformacion(String pCategoria, String pDescripcion, String ptitulo) {
+	try {
+	    // Atributo que almacena la informacion de un documento
+	    SolrInputDocument sDocumento = new SolrInputDocument();
+	    sDocumento.addField("id", asignarID());
+	    sDocumento.addField("title", ptitulo);
+	    sDocumento.addField("category", pCategoria);
+	    sDocumento.addField("description", pDescripcion);
 
-	// Agrega la informaciona la coleccion e incementa el contador
-	cliente.add("ColeccionDS", sDocumento);
+	    // Agrega la informaciona la coleccion e incementa el contador
+	    cliente.add("ColeccionDS", sDocumento);
+	} catch (SolrServerException | IOException e) {
+	    // TODO Auto-generated catch block
+	    e.printStackTrace();
+	}
     }
 
     /**
@@ -183,8 +185,6 @@ public class Conversacion implements ConexionWatson {
      * @param pConsulta
      *            El grupo de palabras a buscar
      * @return Una lista con las respuestas correctas
-     * @throws SolrServerException
-     * @throws IOException
      */
     public ArrayList<Informacion> consultarInformacion(String pConsulta) {
 	// Atributo que almacena la lista de las respuestas
@@ -193,18 +193,19 @@ public class Conversacion implements ConexionWatson {
 	// Atrtibutos que almacena la respuesta a la consulta realizada al
 	// servicio y la cantidad que se obtuvieron
 	SolrDocumentList sRespuesta = nuevaConsulta(pConsulta);
-	long pos = sRespuesta.getNumFound();
+	if (sRespuesta != null) {
+	    long pos = sRespuesta.getNumFound();
 
-	// Ciclo que instancia la clase Informacion y la a�ade a la lista de
-	// respuestas
-	for (int i = 0; i < pos; i++) {
-	    Informacion sInformacion = new Informacion(sRespuesta.get(i).getFirstValue("id").toString(),
-		    sRespuesta.get(i).getFirstValue("category").toString(),
-		    sRespuesta.get(i).getFirstValue("title").toString(),
-		    sRespuesta.get(i).getFirstValue("description").toString());
-	    sListaInformacion.add(sInformacion);
+	    // Ciclo que instancia la clase Informacion y la a�ade a la lista de
+	    // respuestas
+	    for (int i = 0; i < pos; i++) {
+		Informacion sInformacion = new Informacion(sRespuesta.get(i).getFirstValue("id").toString(),
+			sRespuesta.get(i).getFirstValue("category").toString(),
+			sRespuesta.get(i).getFirstValue("title").toString(),
+			sRespuesta.get(i).getFirstValue("description").toString());
+		sListaInformacion.add(sInformacion);
+	    }
 	}
-
 	// Retorna la lista con las consultas respectivas
 	return sListaInformacion;
     }

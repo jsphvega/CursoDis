@@ -115,7 +115,6 @@ public class EntradaVoz extends Pregunta {
 	
 	VozATexto prueba = new VozATexto();
 	prueba.autenticarServicio();
-	prueba.buscarAudio();
 	
 	return prueba.procesarAudio();
     }

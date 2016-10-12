@@ -17,11 +17,10 @@ public class VozATexto implements ConexionWatson {
 
     private static String USUARIO = "b006954a-fc48-445d-a4bb-1aa7a2840a9b";
     private static String CONTRASENA = "PskeMLKQuqfL";
-    private static CountDownLatch lock;
-    private SpeechToText servicio;
+    private static CountDownLatch lock = new CountDownLatch(1);
+    private static SpeechToText servicio;
     private String pregunta;
     private FileInputStream audio;
-    private static final String pathAudio = "src/Files/RecordAudio.wav";
 
     public VozATexto() {
 	servicio = new SpeechToText();
@@ -31,28 +30,52 @@ public class VozATexto implements ConexionWatson {
 	servicio.setUsernameAndPassword(USUARIO, CONTRASENA);
     }
 
-    public void buscarAudio() throws FileNotFoundException {
-	audio = new FileInputStream(pathAudio);
+    /**
+     * Busca el audio en una direccion
+     * 
+     * @throws FileNotFoundException
+     */
+    private boolean buscarAudio() {
+	try {
+	    audio = new FileInputStream("src/Files/RecordAudio.wav");
+	    return true;
+	} catch (Exception e) {
+	    return false;
+	}
     }
 
-    public String procesarAudio() throws InterruptedException {
-	lock = new CountDownLatch(1);
-	RecognizeOptions options = new RecognizeOptions.Builder().model("es-ES_BoardbandModel").continuous(true)
-		.interimResults(true).contentType(HttpMediaType.AUDIO_WAV).build();
+    /**
+     * Transcribe el audio a texto
+     * 
+     * @return la pregunta en texto plano
+     * @throws InterruptedException
+     */
+    public String procesarAudio() {
+	if (buscarAudio()) {
+	    try {
+		RecognizeOptions options = new RecognizeOptions.Builder().model("es-ES_BroadbandModel").continuous(true)
+			.interimResults(true).contentType(HttpMediaType.AUDIO_WAV).build();
 
-	servicio.recognizeUsingWebSocket(audio, options, new BaseRecognizeCallback() {
-	    @Override
-	    public void onTranscription(SpeechResults speechResults) {
-		pregunta = speechResults.getResults().get(0).getAlternatives().get(0).getTranscript();
+		servicio.recognizeUsingWebSocket(audio, options, new BaseRecognizeCallback() {
+		    @Override
+		    public void onTranscription(SpeechResults speechResults) {
+			pregunta = speechResults.getResults().get(0).getAlternatives().get(0).getTranscript();
+		    }
+
+		    @Override
+		    public void onDisconnected() {
+			lock.countDown();
+		    }
+		});
+
+		lock.await(1, TimeUnit.MINUTES);
+
+		return pregunta;
+	    } catch (InterruptedException e) {
+		return "";
 	    }
 
-	    @Override
-	    public void onDisconnected() {
-		lock.countDown();
-	    }
-	});
-
-	lock.await(1, TimeUnit.MINUTES);
-	return pregunta;
+	} else
+	    return "";
     }
 }

@@ -39,8 +39,13 @@ public class Traductor implements ConexionWatson {
      * un string con la traduccion de español a ingles
      */
     public String traducirTexto(String pTexto) {
-	TranslationResult translationResult = servicio.translate(pTexto, Language.SPANISH, Language.ENGLISH).execute();
-	String traduccion = translationResult.getTranslations().get(0).getTranslation();
-	return traduccion;
+	try {
+	    TranslationResult translationResult = servicio.translate(pTexto, Language.SPANISH, Language.ENGLISH)
+		    .execute();
+	    String traduccion = translationResult.getTranslations().get(0).getTranslation();
+	    return traduccion;
+	} catch (Exception e) {
+	    return "";
+	}
     }
 }
