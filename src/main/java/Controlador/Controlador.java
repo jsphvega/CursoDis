@@ -1,32 +1,88 @@
 package Controlador;
 
+import java.util.*;
+
+/**
+ * 
+ */
 public class Controlador {
 
+    /**
+     * Default constructor
+     */
     public Controlador() {
     }
 
-    public void TraducirRespuestas() {
-	// TODO implement here
+
+    /**
+     * @param pConsulta 
+     * @return
+     */
+    public void traducirRespuestas(Consulta pConsulta) {
+        // TODO implement here
+        return null;
     }
 
-    public void AgregarCatalogo() {
-	// TODO implement here
+    /**
+     * @param pEntrenamiento 
+     * @return
+     */
+    public void agregarRespuestasPreguntas(DTOEntrenamientoTutor pEntrenamiento) {
+        // TODO implement here
+        return null;
     }
 
-    public void CrearAudio() {
-	// TODO implement here
+    /**
+     * @return
+     */
+    public void grabarAudio() {
+        // TODO implement here
+        return null;
     }
 
-    public void ObtenerRespuestas() {
-	// TODO implement here
+    /**
+     * @param pConsulta 
+     * @return
+     */
+    public String obtenerRespuestas(Consulta pConsulta) {
+        // TODO implement here
+        return "";
     }
 
-    public void CrearDocumentoEspanol(String pDocumento) {
-	// TODO implement here
+    /**
+     * @param pArchivoConversacion 
+     * @return
+     */
+    public void crearDocumentoConversacion(DTOArchivoConversacion pArchivoConversacion) {
+        // TODO implement here
+        return null;
     }
 
-    public void CrearDocumentoIngles(String pDocumento) {
-	// TODO implement here
+    /**
+     * @param pIncorrectas 
+     * @return
+     */
+    public void guardarIncorrectas(ArrayList<Consulta> pIncorrectas) {
+        // TODO implement here
+        return null;
+    }
+
+    /**
+     * @param pArchivoCategoria 
+     * @return
+     */
+    public void crearDocumentoCategoria(DTOArchivoCategoria pArchivoCategoria) {
+        // TODO implement here
+        return null;
+    }
+
+    /**
+     * @param pRespuesta 
+     * @return
+     */
+    public Boolean verificarRespuesta(DTORespuestaSatisfactoria pRespuesta) {
+        // TODO implement here
+        return null;
     }
 
 }
