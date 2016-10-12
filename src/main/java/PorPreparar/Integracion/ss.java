@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import Integracion.Conversacion;
+import Integracion.Traductor;
 import Negocios.FabricaDocumento;
 import Negocios.Informacion;
 import PorPreparar.Negocios.Consulta;
@@ -57,6 +58,6 @@ public class ss {
     
     public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, InterruptedException {
 	ss dd = new ss();
-	dd.prueba3();
+	dd.prueba4();
     }
 }

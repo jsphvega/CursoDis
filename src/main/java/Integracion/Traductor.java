@@ -1,6 +1,4 @@
-package PorPreparar.Integracion;
-
-import com.ibm.watson.developer_cloud.language_translator.v2.LanguageTranslator;
+package Integracion;
 
 import com.ibm.watson.developer_cloud.language_translator.v2.LanguageTranslator;
 import com.ibm.watson.developer_cloud.language_translator.v2.model.Language;
