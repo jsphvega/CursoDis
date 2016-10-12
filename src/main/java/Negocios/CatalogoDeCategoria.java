@@ -1,7 +1,9 @@
-package PorPreparar.Negocios;
+package Negocios;
 
 import java.io.FileNotFoundException;
 import java.util.*;
+
+import PorPreparar.Negocios.Consulta;
 
 public class CatalogoDeCategoria {
 
