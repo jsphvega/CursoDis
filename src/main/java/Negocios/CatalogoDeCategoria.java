@@ -3,7 +3,7 @@ package Negocios;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-import PorPreparar.Negocios.Consulta;
+import Negocios.Consulta;
 
 public class CatalogoDeCategoria {
 

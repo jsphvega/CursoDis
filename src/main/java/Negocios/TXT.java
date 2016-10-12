@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-import PorPreparar.Negocios.Consulta;
+import Negocios.Consulta;
 
 /**
  * Clase que se encarga de crear un documento TXT de acuerdo a un texto dado

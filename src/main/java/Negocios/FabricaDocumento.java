@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-import PorPreparar.Negocios.Consulta;
+import Negocios.Consulta;
 
 /**
  * Clase que se encarga de crear un documento cumpliendo con los principios de

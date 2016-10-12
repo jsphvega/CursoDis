@@ -13,7 +13,7 @@
 <body>
 <ul>
      <li><a class="menu" href="#index">Inicio</a></li>
-     <li><a href="tutor.html">Entrenamiento</a></li>
+     <li><a href="prueba.jsp">Entrenamiento</a></li>
     </ul>
     <br><br><br> <br><br><br><br><br><br> <br><br><br><br><br><br>
      <strong><center><h1>Bienvenid@ Tutor Cognitvo-Watson</h1> <strong>

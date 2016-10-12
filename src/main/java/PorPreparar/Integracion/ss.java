@@ -8,7 +8,7 @@ import Integracion.Traductor;
 import Integracion.VozATexto;
 import Negocios.FabricaDocumento;
 import Negocios.Informacion;
-import PorPreparar.Negocios.Consulta;
+import Negocios.Consulta;
 import Negocios.EntradaVoz;
 
 public class ss {

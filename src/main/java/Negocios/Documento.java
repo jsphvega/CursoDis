@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 
-import PorPreparar.Negocios.Consulta;
+import Negocios.Consulta;
 
 /**
  * Esta clase permite gestionar la creacion de documentos de acuerdo al tipo de

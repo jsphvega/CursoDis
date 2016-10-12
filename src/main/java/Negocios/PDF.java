@@ -13,7 +13,7 @@ import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import PorPreparar.Negocios.Consulta;
+import Negocios.Consulta;
 
 /**
  * Clase que se encarga de crear un documento PDF de acuerdo a un texto dado
