@@ -2,6 +2,12 @@ package Controlador;
 
 import java.util.*;
 
+import DTO.DTOArchivoCategoria;
+import DTO.DTOArchivoConversacion;
+import DTO.DTOEntrenamientoTutor;
+import DTO.DTORespuestaSatisfactoria;
+import PorPreparar.Negocios.Consulta;
+
 /**
  * 
  */
@@ -20,7 +26,6 @@ public class Controlador {
      */
     public void traducirRespuestas(Consulta pConsulta) {
         // TODO implement here
-        return null;
     }
 
     /**
@@ -29,7 +34,6 @@ public class Controlador {
      */
     public void agregarRespuestasPreguntas(DTOEntrenamientoTutor pEntrenamiento) {
         // TODO implement here
-        return null;
     }
 
     /**
@@ -37,7 +41,6 @@ public class Controlador {
      */
     public void grabarAudio() {
         // TODO implement here
-        return null;
     }
 
     /**
@@ -55,7 +58,6 @@ public class Controlador {
      */
     public void crearDocumentoConversacion(DTOArchivoConversacion pArchivoConversacion) {
         // TODO implement here
-        return null;
     }
 
     /**
@@ -64,7 +66,6 @@ public class Controlador {
      */
     public void guardarIncorrectas(ArrayList<Consulta> pIncorrectas) {
         // TODO implement here
-        return null;
     }
 
     /**
@@ -73,7 +74,6 @@ public class Controlador {
      */
     public void crearDocumentoCategoria(DTOArchivoCategoria pArchivoCategoria) {
         // TODO implement here
-        return null;
     }
 
     /**
@@ -82,7 +82,7 @@ public class Controlador {
      */
     public Boolean verificarRespuesta(DTORespuestaSatisfactoria pRespuesta) {
         // TODO implement here
-        return null;
+        return false;
     }
 
 }
