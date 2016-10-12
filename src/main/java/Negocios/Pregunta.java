@@ -2,7 +2,7 @@ package Negocios;
 
 import java.io.FileNotFoundException;
 
-import PorPreparar.Negocios.EntradaVoz;
+import Negocios.EntradaVoz;
 
 /**
  * Clase que se encarga de manejar todas la informacion acerca de la pregunta y
@@ -29,7 +29,7 @@ public class Pregunta {
      * @throws InterruptedException 
      * @throws FileNotFoundException 
      */
-    public void setPregunta() throws FileNotFoundException, InterruptedException {
+    public void setPregunta(){
 	EntradaVoz sVoz = new EntradaVoz();
 	pregunta = sVoz.procesarPregunta();
     }

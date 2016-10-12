@@ -1,4 +1,4 @@
-package PorPreparar.Negocios;
+package Negocios;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -110,7 +110,7 @@ public class EntradaVoz extends Pregunta {
      * @throws FileNotFoundException 
      * @throws InterruptedException 
      */
-    public String procesarPregunta() throws FileNotFoundException, InterruptedException {
+    public String procesarPregunta() {
 	grabarPregunta();
 	
 	VozATexto prueba = new VozATexto();

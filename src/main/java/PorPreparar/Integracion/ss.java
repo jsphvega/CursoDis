@@ -8,7 +8,7 @@ import Integracion.Traductor;
 import Negocios.FabricaDocumento;
 import Negocios.Informacion;
 import PorPreparar.Negocios.Consulta;
-import PorPreparar.Negocios.EntradaVoz;
+import Negocios.EntradaVoz;
 
 public class ss {
 
@@ -27,7 +27,7 @@ public class ss {
 	}
     }
 
-    public void prueba2() throws ClassNotFoundException, FileNotFoundException, InterruptedException {
+    public void prueba2(){
 	ArrayList<Consulta> listaConsultas = new ArrayList<>();
 	Consulta consulta1 = new Consulta("Cuanto costo la almohada");
 	consulta1.agregarRespuesta("Costo 5000 colones");
@@ -46,7 +46,7 @@ public class ss {
     public void prueba3() {
 	Traductor s = new Traductor();
 	s.autenticarServicio();
-	
+
 	System.out.println(s.traducirTexto("mariposa"));
     }
 

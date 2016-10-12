@@ -1,8 +1,7 @@
 package Negocios;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 
@@ -28,7 +27,7 @@ public abstract class Documento {
      * Metodo que toma un arraylist y transcribe todos los elementos en un
      * archivo
      */
-    public abstract void escribirEnDocumento(ArrayList<Consulta> pTexto) throws IOException;
+    public abstract boolean escribirEnDocumento(ArrayList<Consulta> pTexto);
 
     /**
      * Metodo que se encarga de añadir el nombre del documento a la clase para
@@ -66,7 +65,8 @@ public abstract class Documento {
 	    File JFC = fileChooser.getSelectedFile();
 	    return JFC.getAbsolutePath();
 	}
-	return null;
+	
+	return "";
     }
 
 }

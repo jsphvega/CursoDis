@@ -17,19 +17,24 @@ import PorPreparar.Negocios.Consulta;
 public class TXT extends Documento {
 
     private File archivo;
+    public static String PATHPDF;
 
     /**
      * Metodo que crea un archivo txt
      */
     public void crearDocumento() {
-	archivo = new File(retornarRuta() + ".txt");
+	PATHPDF = retornarRuta();
+
+	if (PATHPDF != "") {
+	    archivo = new File(PATHPDF + ".txt");
+	}
     }
 
     /**
      * Metodo que toma un arraylist y transcribe todos los elementos en un
      * archivo
      */
-    public void escribirEnDocumento(ArrayList<Consulta> pTexto) throws IOException {
+    public boolean escribirEnDocumento(ArrayList<Consulta> pTexto) {
 	// atributos que mantienen y crean el documento
 	String temporal;
 	String[] temp;
@@ -52,12 +57,11 @@ public class TXT extends Documento {
 
 		output.newLine();
 	    }
+	    
+	    output.close();
+	    return true;
 	} catch (IOException e) {
-	    e.printStackTrace();
-	} finally {
-	    if (output != null) {
-		output.close();
-	    }
+	    return false;
 	}
     }
 }

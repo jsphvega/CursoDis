@@ -30,12 +30,13 @@ public class FabricaDocumento {
      *            Las consultas registradas
      * @throws ClassNotFoundException
      */
-    public void crearDocumento(String pTipoDoc, ArrayList<Consulta> pConsultas) throws ClassNotFoundException {
-	// Nombre del documento
-	String nombreClase = PAQUETE + pTipoDoc;
-	documento = Class.forName(nombreClase);
+    public void crearDocumento(String pTipoDoc, ArrayList<Consulta> pConsultas) {
 
 	try {
+	    // Nombre del documento
+	    String nombreClase = PAQUETE + pTipoDoc;
+	    documento = Class.forName(nombreClase);
+
 	    // Se crea la instancia
 	    Object docInstance = documento.newInstance();
 
@@ -50,7 +51,7 @@ public class FabricaDocumento {
 	    escribirEnDocumentoMetodo.invoke(docInstance, pConsultas);
 
 	} catch (NoSuchMethodException | IllegalArgumentException | IllegalAccessException | InstantiationException
-		| InvocationTargetException e) {
+		| InvocationTargetException | ClassNotFoundException e) {
 	    e.printStackTrace();
 	}
     }

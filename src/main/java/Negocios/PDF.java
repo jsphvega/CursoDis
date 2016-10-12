@@ -32,9 +32,12 @@ public class PDF extends Documento {
      */
     public void crearDocumento() {
 	PATHPDF = retornarRuta();
-	File file = new File(PATHPDF + ".pdf");
-	file.getParentFile().mkdirs();
-	documento = new Document(PageSize.A4.rotate());
+
+	if (PATHPDF != "") {
+	    File file = new File(PATHPDF + ".pdf");
+	    file.getParentFile().mkdirs();
+	    documento = new Document(PageSize.A4.rotate());
+	}
     }
 
     /**
@@ -44,7 +47,7 @@ public class PDF extends Documento {
      * @throws FileNotFoundException
      * @throws DocumentException
      */
-    private void configurarDocumento() throws DocumentException {
+    private void configurarDocumento() {
 	try {
 	    PdfWriter writer = PdfWriter.getInstance(documento, new FileOutputStream(PATHPDF + ".pdf"));
 	    writer.setPdfVersion(PdfWriter.VERSION_1_7);
@@ -67,7 +70,7 @@ public class PDF extends Documento {
      * @param pTexto
      * @throws FileNotFoundException
      */
-    public void escribirEnDocumento(ArrayList<Consulta> pTexto) throws FileNotFoundException {
+    public boolean escribirEnDocumento(ArrayList<Consulta> pTexto) {
 	try {
 	    configurarDocumento();
 	    String x;
@@ -79,9 +82,9 @@ public class PDF extends Documento {
 	    }
 	    documento.add(parrafo);
 	    documento.close();
+	    return true;
 	} catch (DocumentException e) {
-	    // TODO: handle exception
-	    e.printStackTrace();
+	    return false;
 	}
 
     }
