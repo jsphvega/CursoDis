@@ -20,8 +20,8 @@ import Integracion.ConexionWatson;
  */
 public class VozATexto implements ConexionWatson {
 
-    private static String USUARIO = "b006954a-fc48-445d-a4bb-1aa7a2840a9b";
-    private static String CONTRASENA = "PskeMLKQuqfL";
+    private static final String USUARIO = "b006954a-fc48-445d-a4bb-1aa7a2840a9b";
+    private static final String CONTRASENA = "PskeMLKQuqfL";
     private static CountDownLatch lock = new CountDownLatch(1);
     private static SpeechToText servicio;
     private String pregunta;
