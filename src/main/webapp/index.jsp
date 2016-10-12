@@ -11,7 +11,7 @@
 <body>
     <ul>
         <li><a class="menu">Inicio</a></li>
-        <li><a href=".jsp">Entrenamiento</a></li>
+        <li><a href="tutor.jsp">Entrenamiento</a></li>
     </ul>
 
     <br /><br /><br /><br /><br /><br /><br /><br />
