@@ -38,9 +38,9 @@ public class ss {
     }
 
     public void prueba3() {
-	/*Traductor s = new Traductor();
+	Traductor s = new Traductor();
 	s.autenticarServicio();
-	System.out.println(s.traducirTexto("mariposa"));*/
+	System.out.println(s.traducirTexto("mariposa"));
     }
 
     public void prueba4() throws FileNotFoundException, InterruptedException{
@@ -57,6 +57,6 @@ public class ss {
     
     public static void main(String[] args) throws ClassNotFoundException, FileNotFoundException, InterruptedException {
 	ss dd = new ss();
-	dd.prueba4();
+	dd.prueba3();
     }
 }
