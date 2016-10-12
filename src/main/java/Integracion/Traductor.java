@@ -15,8 +15,8 @@ import Integracion.ConexionWatson;
  */
 public class Traductor implements ConexionWatson {
 
-    private String USUARIO = "44ffdf8f-076e-4fa2-8b12-36a614e62afe";
-    private String CONTRASENA = "dyX62nw3F3WM";
+    private String static USUARIO = "44ffdf8f-076e-4fa2-8b12-36a614e62afe";
+    private String static CONTRASENA = "dyX62nw3F3WM";
 
     private static LanguageTranslator servicio;
 
