@@ -25,16 +25,16 @@ public class PDF extends Documento {
 
     private Paragraph parrafo;
     private Document documento;
-    public static String PATHPDF;
+    public static String pathPDF;
 
     /**
      * Metodo que crea un archivo en una direccion especifica
      */
     public void crearDocumento() {
-	PATHPDF = retornarRuta();
+	pathPDF = retornarRuta();
 
-	if (PATHPDF != "") {
-	    File file = new File(PATHPDF + ".pdf");
+	if (pathPDF != "") {
+	    File file = new File(pathPDF + ".pdf");
 	    file.getParentFile().mkdirs();
 	    documento = new Document(PageSize.A4.rotate());
 	}
@@ -49,7 +49,7 @@ public class PDF extends Documento {
      */
     private void configurarDocumento() {
 	try {
-	    PdfWriter writer = PdfWriter.getInstance(documento, new FileOutputStream(PATHPDF + ".pdf"));
+	    PdfWriter writer = PdfWriter.getInstance(documento, new FileOutputStream(pathPDF + ".pdf"));
 	    writer.setPdfVersion(PdfWriter.VERSION_1_7);
 	    parrafo = new Paragraph();
 	    parrafo.setFont(new Font(Font.FontFamily.HELVETICA, 20));

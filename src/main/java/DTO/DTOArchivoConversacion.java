@@ -1,28 +1,21 @@
 package DTO;
 
 /**
+ * DTO que recibe los parametros de conversacion
  * 
- */
+ * @author ChuckyBueno
+ * @since 11-Octubre-2016
+ **/
 public class DTOArchivoConversacion {
 
-  private String tipoArchivo;
-    
-  public DTOArchivoConversacion() {
-    }
+    private String tipoArchivo;
 
-    /**
-     * @return
-     */
     public String getTipo() {
-        return tipoArchivo;
+	return tipoArchivo;
     }
 
-    /**
-     * @param pTipo 
-     * @return
-     */
     public void setTipo(String pTipo) {
-       this.tipoArchivo=pTipo;
+	this.tipoArchivo = pTipo;
     }
 
 }

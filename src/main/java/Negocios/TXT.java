@@ -17,16 +17,16 @@ import PorPreparar.Negocios.Consulta;
 public class TXT extends Documento {
 
     private File archivo;
-    public static String PATHPDF;
+    public static String pathTXT;
 
     /**
      * Metodo que crea un archivo txt
      */
     public void crearDocumento() {
-	PATHPDF = retornarRuta();
+	pathTXT = retornarRuta();
 
-	if (PATHPDF != "") {
-	    archivo = new File(PATHPDF + ".txt");
+	if (pathTXT != "") {
+	    archivo = new File(pathTXT + ".txt");
 	}
     }
 
