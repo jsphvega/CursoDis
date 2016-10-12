@@ -1,49 +1,32 @@
 package DTO;
 
-import java.util.*;
-
-/**
- * 
+/** DTO que recibe los parametros de pregunta y respuesta de la vista que se desea agregar al tutor.
+ * @author ChuckyBueno
+ * @since 11-Octubre-2016
  */
+
 public class DTOEntrenamientoTutor {
-
-    /**
-     * Default constructor
-     */
-    public DTOEntrenamientoTutor() {
-    }
-
-    /**
-     * 
-     */
     private String pregunta;
-
-    /**
-     * 
-     */
     private String respuesta;
 
-    /**
-     * 
-     */
-    public void DTOEntrenamientoTutor() {
-        // TODO implement here
+    
+    public DTOEntrenamientoTutor() {
+        
     }
 
     /**
      * @return
      */
     public String getPregunta() {
-        // TODO implement here
-        return "";
+        
+        return pregunta;
     }
 
     /**
      * @return
      */
     public String getRespuesta() {
-        // TODO implement here
-        return "";
+        return respuesta;
     }
 
     /**
@@ -51,8 +34,7 @@ public class DTOEntrenamientoTutor {
      * @return
      */
     public void setPregunta(String pPregunta) {
-        // TODO implement here
-        return null;
+       this.pregunta= pPregunta;
     }
 
     /**
@@ -60,8 +42,7 @@ public class DTOEntrenamientoTutor {
      * @return
      */
     public void setRespuesta(String pRespuesta) {
-        // TODO implement here
-        return null;
+       this.respuesta= pRespuesta;
     }
 
 }

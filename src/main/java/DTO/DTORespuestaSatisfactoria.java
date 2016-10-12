@@ -1,43 +1,27 @@
 package DTO;
 
-import java.util.*;
-
-/**
- * 
+/** DTO que recibe los parametros de la respuesta satisfactoria.
+ * @author ChuckyBueno
+ * @since 11-Octubre-2016
  */
 public class DTORespuestaSatisfactoria {
+  private boolean respuesta;
 
-    /**
-     * Default constructor
-     */
     public DTORespuestaSatisfactoria() {
-    }
-
-    /**
-     * 
-     */
-    private boolean respuesta;
-
-    /**
-     * 
-     */
-    public void DTORespuestaSatsifactoria() {
-        // TODO implement here
     }
 
     /**
      * @return
      */
     public boolean getRespuesta() {
-        // TODO implement here
-        return false;
+        return respuesta;
     }
 
     /**
      * @param pRespuesta
      */
     public void setRespuesta(boolean pRespuesta) {
-        // TODO implement here
+       this.respuesta=pRespuesta;
     }
 
 }

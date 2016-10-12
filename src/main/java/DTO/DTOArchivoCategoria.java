@@ -1,54 +1,31 @@
 package DTO;
 
-import java.util.*;
-
-/**
- * 
+/** DTO que recibe los parametros de pregunta de la vista.
+ * @author ChuckyBueno
+ * @since 11-Octubre-2016
  */
 public class DTOArchivoCategoria {
-
-    /**
-     * Default constructor
-     */
+ 
+    private String categoria;
+    private String tipoArchivo;
+    private String curso;
     public DTOArchivoCategoria() {
     }
 
-    /**
-     * 
-     */
-    private String categoria;
-
-    /**
-     * 
-     */
-    private String tipoArchivo;
-
-    /**
-     * 
-     */
-    private String curso;
-
-    /**
-     * 
-     */
-    public void DTOArchivoCategoria() {
-        // TODO implement here
-    }
 
     /**
      * @return
      */
     public String getCategoria() {
-        // TODO implement here
-        return "";
+        return categoria;
     }
 
     /**
      * @return
      */
     public String getTipoArchivo() {
-        // TODO implement here
-        return "";
+        
+        return tipoArchivo;
     }
 
     /**
@@ -56,8 +33,7 @@ public class DTOArchivoCategoria {
      * @return
      */
     public void setCategoria(String pCategoria) {
-        // TODO implement here
-        return null;
+      this.categoria=pCategoria;
     }
 
     /**
@@ -65,16 +41,14 @@ public class DTOArchivoCategoria {
      * @return
      */
     public void setTipoArchivo(String pTipoArchivo) {
-        // TODO implement here
-        return null;
+        this.tipoArchivo= pTipoArchivo;
     }
 
     /**
      * @return
      */
     public String getCurso() {
-        // TODO implement here
-        return "";
+        return curso;
     }
 
     /**
@@ -82,8 +56,7 @@ public class DTOArchivoCategoria {
      * @return
      */
     public void setCurso(String pCurso) {
-        // TODO implement here
-        return null;
+        this.curso=pCurso;
     }
 
 }
