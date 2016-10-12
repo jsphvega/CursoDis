@@ -7,7 +7,6 @@ import Negocios.Pregunta;
 public class Consulta {
 
     private ArrayList<String> respuestas = new ArrayList<>();
-    private String ID;
     private Pregunta pregunta;
     private ArrayList<String> respuestasIncorrectas;
 
@@ -35,8 +34,6 @@ public class Consulta {
 	    pregunta.setPregunta(pPregunta);
     }
 
-    private void buscarID() {
-    }
 
     public String imprimirCorrectas() {
 	String resultado;
