@@ -13,7 +13,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
 
 import Negocios.Pregunta;
-import PorPreparar.Integracion.VozATexto;
+import Integracion.VozATexto;
 
 /**
  * Clase que se encarga de ejecutar el microfono para introducir la pregunta via
@@ -107,15 +107,15 @@ public class EntradaVoz extends Pregunta {
      * Metodo que se encarga de convertir el audio en una cadena de texto
      * 
      * @return Una cadena de texto
-     * @throws FileNotFoundException 
-     * @throws InterruptedException 
+     * @throws FileNotFoundException
+     * @throws InterruptedException
      */
     public String procesarPregunta() {
 	grabarPregunta();
-	
+
 	VozATexto prueba = new VozATexto();
 	prueba.autenticarServicio();
-	
+
 	return prueba.procesarAudio();
     }
 }
