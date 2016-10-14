@@ -1,5 +1,5 @@
-<%@ page language="java"
-	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -10,65 +10,67 @@
 </head>
 <body style="text-align: center; overflow: hidden">
 
+	<form>
+		<div style="background-color: #333; text-align: left">
+			<button type="submit" value="Inicio"
+				onclick="location.href = 'index.jsp'">Inicio</button>
+			<button type="submit" value="Entrenamiento">Entrenamiento</button>
+			<button type="submit" value="AgregarInformación"
+				onclick="location.href = 'preguntas-respuestas.jsp'">Agregar
+				información</button>
+			<button type="submit" value="GrabarPregunta">Grabar pregunta</button>
+			<button type="submit" value="TraducirRespuesta">Traducir
+				respuesta</button>
+			<button type="submit" value="GenerarDocumento">Generar
+				Documento</button>
+		</div>
 
-	<div style="background-color: #333; text-align: left">
-		<button type="submit" value="Inicio"
-			onclick="location.href = 'index.jsp'">Inicio</button>
-		<button type="submit" value="Entrenamiento">Entrenamiento</button>
-		<button type="submit" value="AgregarInformación"
-			onclick="location.href = 'preguntas-respuestas.jsp'">Agregar
-			información</button>
-		<button type="submit" value="GrabarPregunta">Grabar pregunta</button>
-		<button type="submit" value="TraducirRespuesta">Traducir
-			respuesta</button>
-		<button type="submit" value="GenerarDocumento">Generar
-			Documento</button>
-	</div>
+		<br>
 
-	<br>
+		<table>
+			<tr>
+				<td>
+					<h3>Pregunta</h3>
+				</td>
+			</tr>
+			<tr>
+				<td style="width: 85%"><textarea rows="2" id="pregunta"
+						style="width: 98%"> </textarea></td>
+				<td>
 
-	<table>
-		<tr>
-			<td>
-				<h3>Pregunta</h3>
-			</td>
-		</tr>
-		<tr>
-			<td style="width: 85%"><textarea rows="2" id="pregunta"
-					style="width: 98%"> </textarea></td>
-			<td>
-				<form action="conector.jsp">
 					<button type="submit" value="EnviarPregunta">Enviar
 						Pregunta</button>
-				</form>
-			</td>
-		</tr>
-	</table>
 
-	<br>
+				</td>
+			</tr>
+		</table>
 
-	<table style="height: 50%">
-		<tr>
-			<td>
-				<h3>Respuesta</h3>
-			</td>
-		</tr>
-		<tr style="height: 50%">
-			<td style="width: 85%"><textarea id="respuesta" readonly
-					style="width: 98%; height: 90%"></textarea></td>
-			<td>
-				<div align="center" id="texto">
-					¿Son correctas las respuestas para usted? <input type="radio"
-						name="correcta" value="Si"> Si <input type="radio"
-						name="correcta" value="No"> No <br /> <br />
+		<br>
 
-					<button type="submit" value="EnviarEvaluacion">Enviar
-						Evaluacion</button>
+		<table style="height: 50%">
+			<tr>
+				<td>
+					<h3>Respuesta</h3>
+				</td>
+			</tr>
+			<tr style="height: 50%">
+				<td style="width: 85%"><textarea id="respuesta" readonly
+						style="width: 98%; height: 90%"></textarea></td>
+				<td>
+					<div align="center" id="texto">
+						¿Son correctas las respuestas para usted? <input type="radio"
+							name="correcta" value="Si"> Si <input type="radio"
+							name="correcta" value="No"> No <br /> <br />
 
-				</div>
-			</td>
-		</tr>
-	</table>
+						<button type="submit" value="EnviarEvaluacion">Enviar
+							Evaluacion</button>
 
+					</div>
+				</td>
+			</tr>
+		</table>
+	</form>
+	
+	<jsp:include page="conector.jsp"></jsp:include>
 </body>
 </html>
