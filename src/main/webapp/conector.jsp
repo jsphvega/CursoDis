@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" import="Controlador.Controlador" contnewentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -15,12 +15,13 @@
 <body>
 	<center>
 		<%
-		    for (int i = 0; i < n; i++) {
+		    sN = request.getParameter("EnviarPregunta");
+			Controlador cc = new Controlador();
+			
+			
+			
 		%>
-			<%=i%>
-		<%
-		    }
-		%>
+		<%=cc.prueba() %>
 	</center>
 </body>
 </html>

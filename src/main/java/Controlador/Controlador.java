@@ -51,4 +51,8 @@ public class Controlador {
 	return false;
     }
 
+    public String prueba(){
+	return "Si";
+    }
+    
 }
