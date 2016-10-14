@@ -2,54 +2,44 @@
  * This file provides css styles.
  */
 
-body,html {
-	background-color: #E6E6FA; width : 100%;
-        background-image: url("imagenes/cerebro.jpg"); 
-	height: 100%;
-	margin: 30 auto;
-	font-family: arial ,"Lucida Grande", sans-serif;
-	color: #000000;
-}
+
 
 a {
-	text-decoration: none;
-	color: #00aed1;
+    text-decoration: none;
+    color: #00aed1;
 }
 
-a:hover {
-	text-decoration: underline;
-}
+    a:hover {
+        text-decoration: underline;
+    }
 
 
-h1 {
-	font-weight: bold;
-	font-size: 2em;
-}
+
 
 .leftHalf {
-	float: left;
-	background-color: #26343f;
-	width: 45%;
-	height: 100%;
+    float: left;
+    background-color: #26343f;
+    width: 45%;
+    height: 100%;
 }
 
 .rightHalf {
-	float: right;
-	width: 55%;
-	background-color: #313f4a;
-	height: 100%;
-	overflow:auto;
+    float: right;
+    width: 55%;
+    background-color: #313f4a;
+    height: 100%;
+    overflow: auto;
 }
 
 .description {
-	padding-left: 50px;
-	padding-right: 50px;
-	text-align: center;
-	font-size: 1.2em;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    font-size: 1.2em;
 }
 
 .blue {
-	color: #00aed1;
+    color: #00aed1;
 }
 
 ul {
@@ -64,17 +54,17 @@ li {
     float: left;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
-li a:hover {
-    background-color: #111;
-}
+        li a:hover {
+            background-color: #111;
+        }
 
 .button {
     background-color: #4CAF50; /* Green */
@@ -97,10 +87,10 @@ li a:hover {
     border: 2px solid #008CBA;
 }
 
-.button1:hover {
-    background-color: #008CBA;
-    color: white;
-}
+    .button1:hover {
+        background-color: #008CBA;
+        color: white;
+    }
 
 .button2 {
     background-color: aliceBlue;
@@ -108,88 +98,86 @@ li a:hover {
     border: 2px solid #008CBA;
 }
 
-.button2:hover {
-    background-color: #008CBA;
-    color: white;
-}
+    .button2:hover {
+        background-color: #008CBA;
+        color: white;
+    }
 
 .button3 {
-   background-color: aliceBlue;
+    background-color: aliceBlue;
     color: black;
     border: 2px solid #008CBA;
 }
 
-.button3:hover {
-    background-color: #008CBA;
-    color: white;
-}
+    .button3:hover {
+        background-color: #008CBA;
+        color: white;
+    }
 
 .button4 {
-   background-color: aliceBlue;
+    background-color: aliceBlue;
     color: black;
     border: 2px solid #008CBA;
 }
 
-.button4:hover {
-	  background-color: #008CBA;
-    color: white;
-}
+    .button4:hover {
+        background-color: #008CBA;
+        color: white;
+    }
 
-#text
-{
-    overflow-y:scroll;
+#text {
+    overflow-y: scroll;
 }
 
 input, textarea {
-  background-color : #d1d1d1;
+    background-color: #d1d1d1;
 }
 
 
-select{
-			background:#F0FFFF url(arrow.png);
-			background-position: 500px center;
-			background-repeat: no-repeat;
-		   	padding: 10px;
-		   	font-size: 16px;
-		   	border: 0;
-		   	border-radius: 3px;
-		   -webkit-appearance: none;
-		   -moz-appearance: none;
-
-		   -webkit-transition: all 0.4s;
-		   -moz-transition: all 0.4s;
-		   transition: all 0.4s;
-
-		   -webkit-box-shadow: 0 4px 3px rgba(0,0,0,0.3);
+select {
+    background: #F0FFFF url(arrow.png);
+    background-position: 500px center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    font-size: 16px;
+    border: 0;
+    border-radius: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-box-shadow: 0 4px 3px rgba(0,0,0,0.3);
 }
-	select:hover{
-		background-color: #008CBA;
-}
+
+    select:hover {
+        background-color: #008CBA;
+    }
 
 table {
-	table-layout: fixed;
-	width: 800px;
-	margin: 0 auto;
-	word-wrap: break-word;
-	padding-top:10%;
+    table-layout: fixed;
+    width: 800px;
+    margin: 0 auto;
+    word-wrap: break-word;
+    padding-top: 10%;
 }
 
 th {
-	border-bottom: 1px solid #000;
+    border-bottom: 1px solid #000;
 }
 
 th, td {
-	text-align: left;
-	padding: 2px 20px;
+    text-align: left;
+    padding: 2px 20px;
 }
 
 .env-var {
-	text-align: right;
-	border-right: 1px solid #000;
-	width: 30%;
+    text-align: right;
+    border-right: 1px solid #000;
+    width: 30%;
 }
 
 pre {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }

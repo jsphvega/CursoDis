@@ -1,0 +1,46 @@
+body, html {
+    background-color: #E6E6FA;
+    background-image: url("imagenes/cerebro.jpg");
+    font-family: arial,"Lucida Grande", sans-serif;
+    color: #000000;
+    height: 100%;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+button {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+
+    button:hover {
+        background-color: #FFFFFF;
+        color: black;
+    }
+
+textarea {
+    resize: none;
+}
+
+table {
+    width: 100%;
+    background-color: rgba(255,255,255,0.7);
+}
+
+#texto {
+    padding: 10px;
+}
+
+#fondo {
+    background-color: rgba(255,255,255,0.7);
+}
