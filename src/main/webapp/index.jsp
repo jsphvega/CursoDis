@@ -27,10 +27,5 @@
 		<br>
 		<h1>Administración de Tecnología de Información</h1>
 	</div>
-
-	<form action="conector.jsp">
-		<input type="text" name="n"><br> <input type="submit"
-			value="Enviar">
-	</form>
 </body>
 </html>
