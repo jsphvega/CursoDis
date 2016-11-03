@@ -21,7 +21,7 @@
 			
 			
 		%>
-		<%=cc.prueba() %>
+<%-- 		<%=cc.prueba() %> --%>
 	</center>
 </body>
 </html>

@@ -12,8 +12,8 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.TargetDataLine;
 
-import Negocios.Pregunta;
 import Integracion.VozATexto;
+import Negocios.Pregunta;
 
 /**
  * Clase que se encarga de ejecutar el microfono para introducir la pregunta via
