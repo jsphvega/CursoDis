@@ -1,0 +1,2 @@
+src/main/java/com/ibm/watson/developer_cloud/speech_to_text/v1/SpeechToText.java:54:	The class 'SpeechToText' has a Cyclomatic Complexity of 3 (Highest = 14).
+src/main/java/com/ibm/watson/developer_cloud/speech_to_text/v1/SpeechToText.java:143:	The method 'buildRecognizeRequest' has a Cyclomatic Complexity of 14.

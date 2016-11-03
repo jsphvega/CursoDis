@@ -1,0 +1,83 @@
+Found a 8 line (60 tokens) duplication in the following files: 
+Starting at line 203 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\SpeechToText.java
+Starting at line 411 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\SpeechToText.java
+
+      final RecognitionJobOptions recognitionJobOptions) {
+    Validator.isTrue((audio != null) && audio.exists(), "audio file is null or does not exist");
+
+    final double fileSize = audio.length() / Math.pow(1024, 2);
+    Validator.isTrue(fileSize < 100.0, "The audio file is greater than 100MB.");
+
+    String contentType = MediaTypeUtils.getMediaTypeFromFile(audio);
+    if ((recognizeOptions != null) && (recognizeOptions.contentType() != null)) {
+=====================================================================
+Found a 14 line (33 tokens) duplication in the following files: 
+Starting at line 77 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\language_translator\v2\LanguageTranslator.java
+Starting at line 91 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\SpeechToText.java
+
+  public LanguageTranslator() {
+    super(SERVICE_NAME);
+    if ((getEndPoint() == null) || getEndPoint().isEmpty()) {
+      setEndPoint(URL);
+    }
+  }
+
+  /**
+   * Instantiates a new language translator service by username and password.
+   *
+   * @param username the username
+   * @param password the password
+   */
+  public LanguageTranslator(String username, String password) {
+=====================================================================
+Found a 26 line (33 tokens) duplication in the following files: 
+Starting at line 93 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\model\SpeechSession.java
+Starting at line 72 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\model\SpeechSessionStatus.java
+
+  }
+
+  /**
+   * Sets the observe result.
+   *
+   * @param observeResult The observe_result
+   */
+  public void setObserveResult(final String observeResult) {
+    this.observeResult = observeResult;
+  }
+
+  /**
+   * Sets the recognize.
+   *
+   * @param recognize The recognize
+   */
+  public void setRecognize(final String recognize) {
+    this.recognize = recognize;
+  }
+
+  /**
+   * Sets the recognize ws.
+   *
+   * @param recognizeWS The recognizeWS
+   */
+  public void setRecognizeWS(final String recognizeWS) {
+=====================================================================
+Found a 4 line (32 tokens) duplication in the following files: 
+Starting at line 217 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\SpeechToText.java
+Starting at line 429 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\SpeechToText.java
+
+    buildRecognitionJobRequest(requestBuilder, recognitionJobOptions);
+
+    requestBuilder.body(RequestBody.create(MediaType.parse(contentType), audio));
+    return createServiceCall(requestBuilder.build(), ResponseConverterUtils.getObject(RecognitionJob.class));
+=====================================================================
+Found a 7 line (30 tokens) duplication in the following files: 
+Starting at line 34 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\util\SpeechTimestampTypeAdapter.java
+Starting at line 34 of C:\Users\jsphvega\Downloads\CursoDis\src\main\java\com\ibm\watson\developer_cloud\speech_to_text\v1\util\SpeechWordConfidenceTypeAdapter.java
+
+  public SpeechTimestamp read(JsonReader reader) throws IOException {
+    if (reader.peek() == JsonToken.NULL) {
+      reader.nextNull();
+      return null;
+    }
+
+    final SpeechTimestamp speechTimestamp = new SpeechTimestamp();

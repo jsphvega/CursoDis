@@ -28,5 +28,6 @@
 	<classpathentry kind="lib" path="src/lib/iText-5.0.5.jar"/>
 	<classpathentry kind="lib" path="src/lib/slf4j-simple-1.7.21.jar"/>
 	<classpathentry kind="lib" path="src/lib/solr-solrj-6.2.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
