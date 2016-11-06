@@ -65,7 +65,7 @@ public abstract class Documento {
 	    File JFC = fileChooser.getSelectedFile();
 	    return JFC.getAbsolutePath();
 	}
-	
+
 	return "";
     }
 
